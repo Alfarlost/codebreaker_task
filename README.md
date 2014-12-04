@@ -1,5 +1,7 @@
 # Codebreaker
 
+CodebreakerApplication is inside gem lib/codebreaker/codebreaker_game.rb
+
 TODO: Write a gem description
 
 ## Installation
