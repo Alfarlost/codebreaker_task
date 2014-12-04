@@ -27,6 +27,7 @@ module Codebreaker
       end
       
       it "raises exception if wrong input appear" do
+        expect{game.propose_guess('a123')}.to raise_error(ArgumentError)
         expect{game.propose_guess("12334")}.to raise_error(ArgumentError)
       end
 

@@ -23,6 +23,7 @@ module Codebreaker
 
     def propose_guess(user_guess)
       raise ArgumentError.new unless user_guess.size == 4
+      raise ArgumentError.new unless user_guess.match(/^\d+$/)
 
       answer = ""
       user_guess.chars.each_with_index do |ch, index|
