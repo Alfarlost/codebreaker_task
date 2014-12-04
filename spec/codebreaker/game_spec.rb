@@ -22,26 +22,25 @@ module Codebreaker
 
     context "#propose_guess" do
       it "returns string" do
-        answer = game.propose_guess(6331)
+        answer = game.propose_guess("6331")
         expect(answer).not_to be_empty
       end
       
       it "raises exception if wrong input appear" do
-        expect{game.propose_guess('a123')}.to raise_error(ArgumentError)
-        expect{game.propose_guess(12334)}.to raise_error(ArgumentError)
+        expect{game.propose_guess("12334")}.to raise_error(ArgumentError)
       end
 
       it "returns 4 + if game won" do
         game.instance_variable_set(:@secret_code, "1234")
-        answer1 = game.propose_guess(1234)
+        answer1 = game.propose_guess("1234")
         
         expect(answer1).to eql("++++")
       end
 
       it "returns right output string" do
         game.instance_variable_set(:@secret_code, "1234")
-        answer1 = game.propose_guess(4635)
-        answer2 = game.propose_guess(5566)
+        answer1 = game.propose_guess("4635")
+        answer2 = game.propose_guess("5566")
 
         expect(answer1).to eql("-+")
         expect(answer2).to eql("No hit at all. What a shame!")

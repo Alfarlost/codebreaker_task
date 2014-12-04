@@ -28,7 +28,7 @@ module Codebreaker
       user_guess.chars.each_with_index do |ch, index|
         if ch == @secret_code[index]
           answer += '+'
-        elsif @secret_code[index].include? ch
+        elsif @secret_code.include? ch
           answer += '-'
         end
       end
